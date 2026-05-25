@@ -131,7 +131,7 @@ function NavButton({
 
 function Landing({ onStart }) {
   return (
-    <main className="screen">
+    <main className="screen home-screen">
       <Header />
 
       <div className="side-diamond side-diamond--left" />
@@ -245,6 +245,12 @@ function Identify({
                 ? "Introduce Yourself"
                 : "Your Location"
             }
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                handleProceed();
+              }
+            }}
             onChange={(event) =>
               setCustomer((current) => ({
                 ...current,

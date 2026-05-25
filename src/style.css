@@ -148,6 +148,20 @@ button:disabled {
   right: 32px;
 }
 
+.home-screen .nav-button {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.home-screen .nav-button--back {
+  left: 32px;
+}
+
+.home-screen .nav-button--next {
+  right: 32px;
+}
+
 .nav-icon {
   width: 44px;
   height: 44px;
@@ -214,6 +228,7 @@ button:disabled {
   display: grid;
   justify-items: center;
   gap: 2px;
+  width: min(460px, 78vw);
 }
 
 .type-prompt span {
@@ -224,7 +239,8 @@ button:disabled {
 }
 
 .type-prompt input {
-  width: min(420px, 72vw);
+  width: 100%;
+  max-width: 420px;
   border: 0;
   border-bottom: 1px solid var(--ink);
   outline: 0;
@@ -234,6 +250,7 @@ button:disabled {
   line-height: 1.08;
   text-align: center;
   letter-spacing: -0.07em;
+  padding: 0 0 4px;
 }
 
 .type-prompt input::placeholder {
@@ -648,6 +665,11 @@ button:disabled {
 
   .nav-button {
     bottom: 24px;
+  }
+
+  .home-screen .nav-button {
+    top: 50%;
+    bottom: auto;
   }
 
   .nav-button--back {
