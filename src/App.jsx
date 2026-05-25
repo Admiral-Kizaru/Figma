@@ -223,6 +223,11 @@ function Identify({
     }
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleProceed();
+  };
+
   return (
     <main className="screen">
       <Header />
@@ -232,7 +237,10 @@ function Identify({
       </p>
 
       <DiamondStack className="center-stage">
-        <label className="type-prompt">
+        <form
+          className="type-prompt"
+          onSubmit={handleSubmit}
+        >
           <span>
             {field === "name"
               ? "click to type"
@@ -245,12 +253,6 @@ function Identify({
                 ? "Introduce Yourself"
                 : "Your Location"
             }
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                event.preventDefault();
-                handleProceed();
-              }
-            }}
             onChange={(event) =>
               setCustomer((current) => ({
                 ...current,
@@ -263,7 +265,14 @@ function Identify({
               {error}
             </small>
           )}
-        </label>
+          <button
+            className="sr-only"
+            type="submit"
+            disabled={submitting}
+          >
+            Continue
+          </button>
+        </form>
       </DiamondStack>
 
       <NavButton

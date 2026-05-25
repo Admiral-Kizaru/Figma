@@ -38,6 +38,15 @@ button:disabled {
   opacity: 0.45;
 }
 
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 .screen {
   min-height: 100vh;
   position: relative;
