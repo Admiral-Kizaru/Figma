@@ -130,6 +130,21 @@ function NavButton({
 }
 
 function Landing({ onStart }) {
+  useEffect(() => {
+    const handleEnter = (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        onStart();
+      }
+    };
+
+    window.addEventListener("keydown", handleEnter);
+
+    return () => {
+      window.removeEventListener("keydown", handleEnter);
+    };
+  }, [onStart]);
+
   return (
     <main className="screen home-screen">
       <Header />
