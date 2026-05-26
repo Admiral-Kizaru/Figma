@@ -244,7 +244,7 @@ function Identify({
   };
 
   return (
-    <main className="screen">
+    <main className="screen identify-screen">
       <Header />
 
       <p className="eyebrow">
