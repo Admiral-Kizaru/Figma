@@ -572,7 +572,7 @@ function Summary({ onBack, onNext }) {
                 : undefined
             }
           >
-            {card}
+            <span>{card}</span>
           </button>
         ))}
       </section>
