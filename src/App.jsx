@@ -324,7 +324,7 @@ function Capture({
   const fileInputRef = useRef(null);
 
   return (
-    <main className="screen">
+    <main className="screen capture-screen">
       <Header />
 
       <p className="eyebrow">
@@ -349,7 +349,10 @@ function Capture({
           disabled={uploading}
         >
           <DiamondStack>
-            <span className="choice-icon">()</span>
+            <span
+              className="choice-icon choice-icon--camera"
+              aria-hidden="true"
+            />
             <span className="choice-label choice-label--right">
               Allow A.I.
               <br />
@@ -364,7 +367,10 @@ function Capture({
           disabled={uploading}
         >
           <DiamondStack>
-            <span className="choice-icon">[]</span>
+            <span
+              className="choice-icon choice-icon--gallery"
+              aria-hidden="true"
+            />
             <span className="choice-label choice-label--left">
               Allow A.I.
               <br />
